@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .upperNav {
+            display: flex;
+            background: linear-gradient(to right, #070b09e0, #00a97cee);
+        }
+
+        .rightNav {
+            width: 50%;
+            display: flex;
+            justify-content: end;
+
+        }
+
+        .leftNav {
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        .NavSearch {
+            display: flex;
+           
+            height: 16px;
+            padding: 10px;
+            background-color: #48484800 ;
+            border: none;
+        }
+
+        .NavSearch ::placeholder{
+            color: white;
+        }
+
+        .rightNav a {
+            color: white;
+            text-decoration: none;
+            padding: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lowerNav {
+            display: flex;
+            height: 100px;
+
+
+        }
+
+        .l-leftNav {
+            width: 20%;
+
+        }
+
+        .l-leftNav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .l-midNav {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .l-midNav li {
+            list-style: none;
+            display: inline;
+            padding: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .l-midNav a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .l-rightNav {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .SellButton {
+            border: none;
+            background-color: #00A97D;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 12rem;
+            height: 3rem;
+
+        }
+
+        .bgImage {
+            width: 100%;
+            height: 36rem;
+            position: relative;
+            z-index: -1;
+        }
+
+        .layer {
+            background: linear-gradient(to right, #070b09df, #00a97c73);
+            position: absolute;
+            top: 9.5rem;
+            left: 0;
+            width: 100%;
+            height: 36rem;
+
+        }
+
+        .upperContent {
+            width: 100%;
+            height: 18rem;
+            /* background-color: black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+
+
+        }
+
+        .lowerContent {
+            width: 100%;
+            height: 18rem;
+            /* background-color: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heading1 {
+            color: white;
+            font-size: 3rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .heading2 {
+            color: white;
+            font-size: 1rem;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        }
+
+        .dropdown-btn {
+            background-color: #f1f1f1;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            height: 45px;
+            width: 280px;
+        }
+
+        .buttonlayer {
+            width: 79%;
+            height: 24%;
+            background-color: rgba(0, 0, 0, 0.547);
+            z-index: 5;
+            position: absolute;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-right: 10px;
+
+
+        }
+
+        .search-bar3 {
+            border: none;
+            background-color: white;
+            color: black;
+            height: 25px;
+            width: 280px;
+            padding: 10px;
+        }
+
+        .search-button {
+            border: none;
+            background-color: #00A97D;
+            width: 280px;
+            height: 45px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 280px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .upperBlock {
+            display: flex;
+            width: 100%;
+            height: 10rem;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .para3 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+
+        }
+
+        .lowerBlock {
+            height: 20 rem;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        .leftBlock {
+            background-color: #dfd7d73a;
+            width: 40%;
+            height: 17rem;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .rightBlock {
+            background-color: #dfd7d73a;
+            width: 40%;
+            height: 17rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            gap: 1rem;
+        }
+
+        .leftBlock {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heading3 {
+
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .heading3 ul {
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+            margin: 10px;
+        }
+
+        .heading4 ul {
+            display: inline;
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-style: bold;
+        }
+
+        .heading4 {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heading img {
+            width: 10rem;
+            height: 2rem;
+            position: relative;
+            left: 10px;
+        }
+
+        .headingbg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .headingbg img {
+            width: 10rem;
+            height: 2rem;
+            position: relative;
+            left: 10px;
+
+
+        }
+
+
+
+
+
+        .imageAd {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .imageAd img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .priceContainer {
+            width: 20%;
+            height: 100%;
+
+
+        }
+
+        .infoContainer {
+            width: 60%;
+            height: 100%;
+
+
+
+        }
+
+       
+
+        .para1 {
+            padding: 10px;
+        }
+
+        .para2 {
+            padding: 10px;
+        }
+
+        .c2 {
+            height: 15rem;
+            width: 75%;
+            background-color: rgb(252, 250, 250);
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        }
+
+        .c2:hover {
+
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .ads {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+
+        }
+
+        .middleside {
+            margin: 1rem;
+            font-family: Calibri, "Trebuchet MS", sans-serif;
+
+
+        }
+
+        .locat {
+            height: 1rem;
+            width: 1rem;
+            margin-right: 0.4rem;
+        }
+
+        .midinfo {
+            display: flex;
+        }
+
+        .sort {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem;
+        }
+
+        .lf {
+            display: flex;
+        }
+
+        .sv {
+            margin-right: 0.4rem;
+        }
+
+        .low {
+
+            color: grey;
+            margin: 1rem;
+            display: flex;
+            gap: 2rem;
+
+        }
+
+        .sv1 {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .sell-button {
+            border: none;
+            background-color: #00A97D;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10rem;
+
+        }
+
+        .priceContainer {
+            height: 100%;
+            width: 16rem;
+            font-family: 'roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .t1 {
+            display: flex;
+            gap: 0.5rem;
+
+        }
+
+        .t2 {
+            display: flex;
+            gap: 0.5rem;
+
+        }
+
+        .t3 {
+            display: flex;
+            gap: 0.5rem;
+
+        }
+
+        .upperPriceCont {
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            /* margin-top: 1rem; */
+            justify-content: center;
+        }
+
+        .sell-button {
+            border: none;
+            background-color: #00A97D;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10rem;
+
+        }
+
+
+
+
+        .upperLayerCont {
+            height: 30rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .imageLayer1 {
+            width: 100%;
+            height: 25rem;
+            background-color: rgba(0, 0, 0, 0.774);
+            position: absolute;
+            z-index: 1;
+
+        }
+
+        .image1 ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .logolayer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 25rem;
+            gap: 6rem;
+        }
+
+        .image1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title1 {
+            display: flex;
+            gap: 5px;
+
+        }
+
+        .image2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title2 {
+            display: flex;
+            gap: 5px;
+
+        }
+
+        .image3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title3 {
+            display: flex;
+            gap: 5px;
+
+        }
+
+        .image4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .title4 {
+            display: flex;
+            gap: 5px;
+
+        }
+
+        .blogHeading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .blogHeading ul {
+            margin: 10px;
+        }
+
+        .underline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 10px;
+        }
+
+        .bikeLayer {
+            width: 80%;
+            height: 25rem;
+            display: flex;
+
+        }
+
+       
+
+        .info1 {
+            width: 33.3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .info2 {
+            width: 33.3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .info3 {
+            width: 33.3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .info1 img {
+            height: 12rem;
+        }
+
+        .info2 img {
+            height: 12rem;
+        }
+
+        .info3 img {
+            height: 12rem;
+        }
+
+        .txt {
+            padding: 10px;
+            height: 5rem;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            color: #646464;
+        }
+
+        .lowerLayerCont {
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        .layerss {
+            background-color: rgba(0, 0, 0, 0.481);
+            width: 100%;
+            height: 23rem;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+        }
+
+        .imgProfilebg {
+            width: 100%;
+            height: 23rem;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .box1 {
+            background-color: white;
+            box-shadow: rgba(250, 250, 250, 0.24) 0px 3px 8px;
+            width: 25%;
+            height: 15rem;
+            font-family: 'roboto',sans-serif;
+        }
+
+        .box1:hover{
+            box-shadow: rgb(115, 111, 111) 0px 20px 30px -10px;
+        }
+        .box2:hover{
+            box-shadow: rgb(115, 111, 111) 0px 20px 30px -10px;
+        }
+        .box3:hover{
+            box-shadow: rgb(115, 111, 111) 0px 20px 30px -10px;
+        }
+
+        .box2 {
+            box-shadow: rgba(250, 250, 250, 0.24) 0px 3px 8px;
+            background-color: white;
+            width: 25%;
+            height: 15rem;
+            font-family: 'roboto',sans-serif;
+        }
+
+        .box3 {
+            background-color: white;
+            width: 25%;
+            height: 15rem;
+            box-shadow: rgba(250, 250, 250, 0.24) 0px 3px 8px;
+            font-family: 'roboto',sans-serif;
+        }
+
+        .stHeading {
+            height: 45px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .review {
+            display: flex;
+            align-items: end;
+            margin: 1rem;
+        }
+
+        .Empinfo {
+            width: 100%;
+            height: 4rem;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .upperPt {
+            height: 30rem;
+            width: 100%;
+
+
+
+        }
+
+        .inspection {
+            display: flex;
+            justify-content: center;
+            gap: 8rem;
+            margin: 8rem;
+        }
+
+        .inspectionInfo {
+            width: 35rem;
+            height: 23rem;
+            font-family: 'roboto',sans-serif;
+            
+
+        }
+
+        .upperInspection {
+            width: 100%;
+
+            height: 5rem;
+        }
+
+        .middleInspection {
+            width: 100%;
+
+            height: 15rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+            gap: 3rem;
+            height: 13rem;
+        }
+
+        .dingbat {
+            border: none;
+        }
+
+        .ul1 {
+            color: #00A97D;
+
+        }
+
+        .ScheduleInspection {
+            border: none;
+            background-color: #00A97D;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 50%;
+            height: 3rem;
+            font-size: 1rem;
+            
+        }
+
+        .lowerPt {
+            width: 100%;
+            height: 17rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .companylogo {
+
+            width: 80%;
+            height: 17rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           gap: 2rem;
+        }
+
+        .upperContext {
+            width: 100%;
+            height: 45rem;
+            background-color: #070404b9;
+            position: absolute;
+            display: flex;
+        }
+
+        .imgg {
+            background-color: white;
+            position: absolute;
+            z-index: -1;
+        }
+
+       
+
+        .leftside {
+            height: 45rem;
+            width: 50%;
+            display: flex;
+            align-items: end;
+
+            justify-content: space-evenly;
+
+        }
+
+        .leftside img {
+            position: relative;
+            display: flex;
+            height: 35rem;
+            width: 34rem;
+
+
+        }
+
+        .rightside {
+            width: 50%;
+            height: 45rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upperside {
+            height: 22rem;
+            width: 36rem;
+            color: white;
+            font-family: 'roboto',sans-serif;
+
+        }
+
+        .span1 {
+            size: 10px;
+            font-size: 2rem;
+        }
+
+        .lowerside {
+
+            height: 10rem;
+            width: 36rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .lb {
+            height: 5rem;
+            width: 17rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .rb {
+            height: 5rem;
+            width: 17rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .store-button {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            align-items: center;
+            padding: 0.4rem 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            border: 2px solid rgb(250, 248, 248);
+            cursor: pointer;
+            width: 15rem;
+            height: 3rem;
+        }
+
+       
+
+        .lowerContext {
+            display: flex;
+        }
+
+        .leftspot {
+            background-color: white;
+            height: 23rem;
+            width: 30%;
+        }
+
+        .middlespot {
+
+            height: 23rem;
+            width: 30%;
+        }
+
+        .rightspot {
+            background-color: yellow;
+            height: 23rem;
+            width: 40%;
+        }
+
+        .CarLogo {
+            height: 10rem;
+            width: 100%;
+        }
+
+        .CarLogo {
+            display: flex;
+            justify-content: start;
+            align-items: end;
+        }
+
+        .carPara {
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .carPara p {
+
+            margin: 1rem;
+            font-size: 1.5rem;
+            color: rgb(93, 93, 93);
+        }
+
+        
+
+        .storebtn {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 22rem;
+
+        }
+
+
+        .upperl {
+
+            height: 7rem;
+            width: 30rem;
+            display: flex;
+
+            align-items: center;
+            justify-content: start;
+        }
+
+        .upperl img {
+            height: 3rem;
+        }
+
+        .middlel {
+            font-size: 1.2rem;
+        }
+
+        .lowerContext {
+            width: 100%;
+
+        }
+
+        .lowerl {
+            height: 6rem;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+       
+
+        .middleSpot {
+            width: 30%;
+
+        }
+
+        .upperPriceCont {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            height: 24rem;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .c {
+            height: 15rem;
+            width: 80%;
+            background-color: rgb(252, 250, 250);
+            display: flex;
+
+
+        }
+
+        .middleside {
+            margin: 1rem;
+            font-family: Calibri, "Trebuchet MS", sans-serif;
+
+
+        }
+
+        .locat {
+            height: 1rem;
+            width: 1rem;
+            margin-right: 0.4rem;
+        }
+
+        .midinfo {
+            display: flex;
+        }
+
+        .sort {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem;
+        }
+
+        .lf {
+            display: flex;
+        }
+
+        .sv {
+            margin-right: 0.4rem;
+        }
+
+        .low {
+
+            color: grey;
+            margin: 1rem;
+            display: flex;
+            gap: 2rem;
+
+        }
+
+        .sv1 {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .blogcontainer {
+      height: 24rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+
+    }
+
+    .blog1{
+      background-color: white;
+      height: 18rem;
+      width: 18rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .blog1:hover{
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
+    .contextblog{
+      display: flex;
+      font-size: 0.8rem;
+    }
+
+    .block7 {
+      display: flex;
+      justify-content: center;
+      font-family: 'roboto',sans-serif;
+      position: relative;
+      top: 47rem;
+    }
+
+    .contain {
+     
+      width: 90%;
+      height: 15rem;
+      display: flex;
+      gap: 2rem;
+    }
+
+  
+
+  
+    @font-face {
+      font-family: 'roboto',sans-serif;
+      src: url("https://fonts.googleapis.com/css?family=Open+Sans") format("ttf");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    a.btn-google {
+      color: #fff
+    }
+
+    .btn {
+      padding: 10px 16px;
+      margin: 5px;
+      font-size: 18px;
+      line-height: 1.3333333;
+     
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block
+     
+    }
+
+    .btn:active:focus,
+    .btn:focus {
+      outline: 0
+    }
+
+    .btn:focus,
+    .btn:hover {
+      color: #333;
+      text-decoration: none;
+      outline: 0
+    }
+
+    .btn:active {
+      outline: 0;
+      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+    }
+
+    .btn-google {
+      color: #fff;
+      background-color: #111;
+      border-color: #000;
+      padding: 15px 16px 5px 40px;
+      position: relative;
+      font-family: fontfutura;
+      font-weight: 600
+    }
+
+    .btn-google:focus {
+      color: #fff;
+      background-color: #555;
+      border-color: #000
+    }
+
+    .btn-google:active,
+    .btn-google:hover {
+      color: #fff;
+      background-color: #555;
+      border-color: #000;
+    }
+
+    .btn-google:before {
+      content: "";
+      background-image: url(https://4.bp.blogspot.com/-52U3eP2JDM4/WSkIT1vbUxI/AAAAAAAArQA/iF1BeARv2To-2FGQU7V6UbNPivuv_lccACLcB/s30/nexus2cee_ic_launcher_play_store_new-1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      margin-top: -15px
+    }
+
+    .btn-google:after {
+      content: "GET IT ON";
+      position: absolute;
+      top: 5px;
+      left: 40px;
+      font-size: 10px;
+      font-weight: 400;
+    }
+    .btn-apple {
+      color: #fff;
+      background-color: #111;
+      border-color: #000;
+      padding: 15px 16px 5px 40px;
+      position: relative;
+      font-family: fontfutura;
+      font-weight: 600;
+    
+    }
+
+    .btn-apple:focus {
+      color: #fff;
+      background-color: #555;
+      border-color: #000
+    }
+
+    .btn-apple:active,
+    .btn-apple:hover {
+      color: #fff;
+      background-color: #555;
+      border-color: #000;
+    }
+
+    .btn-apple:before {
+      content: "";
+      background-image: url(https://i.pinimg.com/originals/5e/67/1c/5e671cbe6457e88c59d9f82b8270749d.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      margin-top: -15px
+    }
+
+    .btn-apple:after {
+      content: "GET IT ON";
+      position: absolute;
+      top: 5px;
+      left: 40px;
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .middleContain{
+      color: white;
+      display: flex;
+      gap: 8rem;
+      margin: 1rem;
+      font-family: 'roboto',sans-serif;
+    }
+
+    .contain{
+      display: flex;
+      gap: 4rem;
+      justify-content: center;
+    }
+
+    .middleContain h4{
+      display: flex;
+      align-items: center;
+
+    }
+
+    .middleContain a {
+      text-decoration: none;
+      color: gray;
+      list-style: none;
+      font-family: 'roboto',sans-serif;
+      font-size: 0.8rem;
+    }
+.followus{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: black;
+}
+
+.quicklinks{
+  display: flex;
+  flex-direction: column;
+  gap: 1.65rem;
+  color: black;
+}
+
+.rightContain{
+
+  height: 19rem;
+  width: 28rem;
+}
+
+.search-bar3 {
+            border: none;
+            background-color: white;
+            color: black;
+            height: 25px;
+            width: 280px;
+            padding: 10px;
+            margin: 1rem;
+            border: 1px solid black;
+        }
+.search-button5{
+  height: 3rem;
+  width: 5rem;
+  background-color:  #00A97D;
+  color: white;
+  border: none;
+  
+}
+    .end{
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+
+    .btnap{
+        margin-top: 3rem;
+    }
+
+    .block7{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="upperNav">
+        <nav class="leftNav">
+            <input type="text" placeholder="Search" class="NavSearch">
+        </nav>
+        <nav class="rightNav">
+            <ul> <a href="#">LogIn</a> </ul>
+            <ul> <a href="#">SignUp</a> </ul>
+        </nav>
+
+    </nav>
+    <nav class="lowerNav">
+        <nav class="l-leftNav">
+            <img src="images/logo.PNG" alt="logo" class="logo">
+        </nav>
+        <nav class="l-midNav">
+            <li><a href="#"> Home ▼</a></li>
+            <li><a href="#"> Search ▼</a></li>
+            <li><a href="#"> Compare ▼</a></li>
+            <li><a href="#"> Reviews ▼</a></li>
+            <li><a href="#"> About Us ▼</a></li>
+            <li><a href="#"> Services ▼</a></li>
+            <li><a href="#"> Pages ▼</a></li>
+            <li><a href="#"> Users ▼</a></li>
+        </nav>
+        <nav class="l-rightNav">
+            <button class="SellButton">Sell Your Bike</button>
+        </nav>
+    </nav>
+    <section class="block1">
+        <img src="https://c1.wallpaperflare.com/preview/197/5/290/super-bike-kawasaki-ninja-bicycle.jpg"
+            alt="Background Image" class="bgImage">
+        <div class="layer">
+            <div class="content">
+                <div class="upperContent">
+                    <h1 class="heading1">Find What are your looking for</h1>
+                    <h2 class="heading2">Over 90000 latest bikes in Databank</h2>
+                </div>
+                <div class="lowerContent">
+                    <div class="buttonlayer">
+                        <div class="dropdown">
+                            <button class="dropdown-btn">Select an option<span class="arrow">&#9660;</span></button>
+                            <div class="dropdown-content">
+                                <a href="#">Option 1</a>
+                                <a href="#">Option 2</a>
+                                <a href="#">Option 3</a>
+                            </div>
+                        </div>
+                        <input type="text" class="search-bar3" placeholder="Select an option...">
+                        <button class="search-button">Search</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+    <section class="block2">
+        <div class="upperBlock">
+            <div class="heading">
+                <div class="heading4">
+                    <ul>Latest</ul>
+                    <ul style="color: #00A97D;">Featured</ul>
+                    <ul>Bikes</ul>
+
+
+                </div>
+                <img src="images/underline.PNG" alt="---------------" class="underline">
+                <div class="para3">repellat placeat nulla nisi dolorum sequi culpa excepturi
+                    <br> laudantium harum architecto ea fuga?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="lowerBlock">
+            <div class="leftBlock">
+                <p style="font-size: 1.8rem; font-style: italic;">Want to Sell your Bike?</p>
+                <p style="color: #00A97D; font-size: 2.2rem;">Are you looking for a Bike?</p>
+                <p style="color: #716d6dc4;">Search your car in our inventory and <br> request a quote on the vehicle of
+                    your choice</p>
+
+            </div>
+            <div class="rightBlock">
+                <p style="font-size: 1.8rem; font-style: italic;">Want to Sell your Bike?</p>
+                <p style="color: #00A97D; font-size: 2.2rem;">Do you want to sell your Bike?</p>
+                <p style="color: #716d6dc4;">Search your car in our inventory and <br> request a quote on the vehicle of
+                    your choice</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="block3">
+        <div class="headingbg">
+            <div class="heading3">
+                <ul>Latest</ul>
+                <ul style="color: #00A97D;">Trending</ul>
+                <ul>ADS</ul>
+
+
+
+            </div>
+            <img src="images/underline.PNG" alt="---------------" class="underline">
+            <p style="text-align: center; height: 10rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit <br>
+                labore quisquam quae, a blanditiis!</p>
+
+        </div>
+
+        <div class="ads">
+            <div class="c2">
+
+                <div class="imgside">
+                    <img src="https://images.unsplash.com/photo-1595691403533-7f4a52a5b189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXJiaWtlfGVufDB8fDB8fHww&w=1000&q=80"
+                        alt="*" style="height: 15rem; width: 15rem;">
+                </div>
+
+                <div class="middleside">
+                    <div class="Headi">
+                        <p style=" font-family: 'Roboto', sans-serif; font-size: 1rem; margin: 0.6rem;"><b> Honda CBR
+                                600 </b></p>
+                    </div>
+                    <div class="sort">
+
+                        <div class="midinfo">
+                            <div class="locat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <g>
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="inf">
+                                <h4 style="color: grey; font-size: 1rem;">Bloomfield, New Jersey, United States </h4>
+                            </div>
+
+                        </div>
+
+                        <div class="lf">
+                            <div class="sv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                </svg>
+                            </div>
+                            <div class="date">
+                                <h4 style="color: grey;">July 28,2017</h4>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="middd">
+                        <h4 style="color: grey; margin: 1rem;">On the Wheel was eastablished in 2006 and has grown fast
+                            to become one
+                            of south's <br> top motorcycle shops. Our state... </h4>
+                    </div>
+                    <div class="low">
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-speedometer" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+                                <path fill-rule="evenodd"
+                                    d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z" />
+                            </svg>
+
+                            <div class="pe">
+                                <h4>8,400</h4>
+                            </div>
+                        </div>
+                        <div class="sv1">
+                            <div class="pe">
+                                <h4>1500CC</h4>
+                            </div>
+                        </div>
+
+
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-car-front" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z" />
+                                <path
+                                    d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z" />
+                            </svg>
+                            <div class="pe">
+                                <h4>S x S </h4>
+                            </div>
+                        </div>
+
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-palette" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                <path
+                                    d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z" />
+                            </svg>
+                            <div class="pe">
+                                <h4>Black</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pricecont">
+                    <div class="priceContainer">
+                        <div class="upperPriceCont">
+                            <div class="t1">
+                                <h4 style="font-size: 1rem;"><b>Ad type:</b>
+                                    <h4 style="color: #646464;"> Sell</h4>
+                                </h4>
+                            </div>
+                            <div class="t2">
+                                <h4 style="font-size: 1rem;"><b>Conditions:</b>
+                                    <h4 style="color:#646464;"> New</h4>
+                                </h4>
+                            </div>
+                            <div class="t3">
+                                <h4 style="font-size: 1rem;"><b>Visits:</b>
+                                    <h4 style="color: #646464;">3823</h4>
+                                </h4>
+                            </div>
+
+                        </div>
+
+                        <div class="lowerPriceCont">
+                            <h1
+                                style="font-size: 1.5rem; font-family:'Roboto', sans-serif; color: #00A97D; height: 2rem; display: flex; align-items: center;">
+                                $3,800</h1>
+                            <button class="sell-button">View ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c2">
+
+                <div class="imgside">
+                    <img src="https://images.unsplash.com/photo-1595691403533-7f4a52a5b189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXJiaWtlfGVufDB8fDB8fHww&w=1000&q=80"
+                        alt="*" style="height: 15rem; width: 15rem;">
+                </div>
+
+                <div class="middleside">
+                    <div class="Headi">
+                        <p style=" font-family: 'Roboto', sans-serif; font-size: 1rem; margin: 0.6rem;"><b> Honda CBR
+                                600 </b></p>
+                    </div>
+                    <div class="sort">
+
+                        <div class="midinfo">
+                            <div class="locat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <g>
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="inf">
+                                <h4 style="color: grey; font-size: 1rem;">Bloomfield, New Jersey, United States </h4>
+                            </div>
+
+                        </div>
+
+                        <div class="lf">
+                            <div class="sv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                </svg>
+                            </div>
+                            <div class="date">
+                                <h4 style="color: grey;">July 28,2017</h4>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="middd">
+                        <h4 style="color: grey; margin: 1rem;">On the Wheel was eastablished in 2006 and has grown fast
+                            to become one
+                            of south's <br> top motorcycle shops. Our state... </h4>
+                    </div>
+                    <div class="low">
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-speedometer" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+                                <path fill-rule="evenodd"
+                                    d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z" />
+                            </svg>
+
+                            <div class="pe">
+                                <h4>8,400</h4>
+                            </div>
+                        </div>
+                        <div class="sv1">
+                            <div class="pe">
+                                <h4>1500CC</h4>
+                            </div>
+                        </div>
+
+
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-car-front" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z" />
+                                <path
+                                    d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z" />
+                            </svg>
+                            <div class="pe">
+                                <h4>S x S </h4>
+                            </div>
+                        </div>
+
+                        <div class="sv1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-palette" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                <path
+                                    d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z" />
+                            </svg>
+                            <div class="pe">
+                                <h4>Black</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pricecont">
+                    <div class="priceContainer">
+                        <div class="upperPriceCont">
+                            <div class="t1">
+                                <h4 style="font-size: 1rem;"><b>Ad type:</b>
+                                    <h4 style="color: #646464;"> Sell</h4>
+                                </h4>
+                            </div>
+                            <div class="t2">
+                                <h4 style="font-size: 1rem;"><b>Conditions:</b>
+                                    <h4 style="color:#646464;"> New</h4>
+                                </h4>
+                            </div>
+                            <div class="t3">
+                                <h4 style="font-size: 1rem;"><b>Visits:</b>
+                                    <h4 style="color: #646464;">3823</h4>
+                                </h4>
+                            </div>
+
+                        </div>
+
+                        <div class="lowerPriceCont">
+                            <h1
+                                style="font-size: 1.5rem; font-family:'Roboto', sans-serif; color: #00A97D; height: 2rem; display: flex; align-items: center;">
+                                $3,800</h1>
+                            <button class="sell-button">View ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        </div>
+
+        </div>
+
+        </div>
+    </section>
+
+    <section class="block4">
+        <div class="upperLayerCont">
+            <img src="images/anotherBike.PNG" alt="." style="width: 100%; height: 25rem;">
+            <div class="imageLayer1">
+                <div class="logolayer">
+                    <div class="image1">
+                        <img src="images/bikelogo.PNG" alt="." style="border-radius: 10rem; height: 3rem;">
+                        <h1 style="font-size: 2rem;">3829</h1>
+                        <div class="title1">
+                            <ul style="font-size: 2rem;">Total</ul>
+                            <ul style="color: #00A97D; font-size: 2rem;">Bikes</ul>
+                        </div>
+                    </div>
+                    <div class="image2">
+                        <img src="images/newlogo.PNG" alt="." style="border-radius: 10rem; height: 3rem;">
+
+                        <h1 style="font-size: 2rem;">3829</h1>
+                        <div class="title1">
+                            <ul style="font-size: 2rem;">Verified</ul>
+                            <ul style="color: #00A97D; font-size: 2rem;">Dealers</ul>
+                        </div>
+
+                    </div>
+                    <div class="image3">
+                        <img src="images/heartlogo.PNG" alt="." style="border-radius: 10rem; height: 3rem;">
+
+                        <h1 style="font-size: 2rem;">3829</h1>
+                        <div class="title1">
+                            <ul style="font-size: 2rem;">Active</ul>
+                            <ul style="color: #00A97D; font-size: 2rem;">Users</ul>
+                        </div>
+                    </div>
+                    <div class="image4">
+                        <img src="images/globelogo.PNG" alt="." style="border-radius: 10rem; height: 3rem;">
+
+                        <h1 style="font-size: 2rem;">3829</h1>
+                        <div class="title1">
+                            <ul style="font-size: 2rem;">Featured</ul>
+                            <ul style="color: #00A97D; font-size: 2rem;">Ads</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="middleLayerCont">
+            <div class="blogHeading">
+                <ul>Latest</ul>
+                <ul style="color: #00A97D;">Blog</ul>
+                <ul>Post</ul>
+            </div>
+            <div class="underline">
+                <img src="images/underline.PNG" alt="---------------">
+            </div>
+            <div class="parag" style="display: flex; justify-content: center; text-align: center;">
+                <p>Lorem ipsum dolor sit <br> mollitia nostrum earum molestiae.</p>
+            </div>
+            <div class="blogcontainer">
+                <div class="blog1">
+                  <div class="upperblog">
+                    <img src="https://static.autox.com/uploads/2023/04/RE-HIMALAYAN.jpg" alt="blog1" style="height: 13rem; width: 18rem;">
+            
+                  </div>
+                  <div class="contextblog">
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">June 04,2017</h4>
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">Comments 0</h4>
+            
+                  </div>
+                  <div class="lowerinfotxt">
+                    <h4 style="font-size: 0.8rem; margin: 0.5rem; font-family: 'roboto',sans-serif;">Heavy bike production for north America will cease for a year</h4>
+                  </div>
+                </div>
+                <div class="blog1">
+                  <div class="upperblog">
+                    <img src="https://static.autox.com/uploads/2023/04/RE-HIMALAYAN.jpg" alt="blog1" style="height: 13rem; width: 18rem;">
+            
+                  </div>
+                  <div class="contextblog">
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">June 04,2017</h4>
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">Comments 0</h4>
+            
+                  </div>
+                  <div class="lowerinfotxt">
+                    <h4 style="font-size: 0.8rem; margin: 0.5rem; font-family: 'roboto',sans-serif;">Heavy bike production for north America will cease for a year</h4>
+                  </div>
+                </div>
+                <div class="blog1">
+                  <div class="upperblog">
+                    <img src="https://static.autox.com/uploads/2023/04/RE-HIMALAYAN.jpg" alt="blog1" style="height: 13rem; width: 18rem;">
+            
+                  </div>
+                  <div class="contextblog">
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">June 04,2017</h4>
+                    <h4 style="color: gray; font-family: 'roboto',sans-serif; margin: 0.5rem;">Comments 0</h4>
+            
+                  </div>
+                  <div class="lowerinfotxt">
+                    <h4 style="font-size: 0.8rem; margin: 0.5rem; font-family: 'roboto',sans-serif;">Heavy bike production for north America will cease for a year</h4>
+                  </div>
+                </div>
+              
+              </div>
+        </div>
+        <div class="lowerLayerCont">
+
+            <div class="layerss">
+                <img src="https://c4.wallpaperflare.com/wallpaper/412/146/514/sunset-mountains-red-motorcycle-wallpaper-preview.jpg"
+                    alt="." class="imgProfilebg">
+                <div class="box1">
+                    <article class="card">
+                        <div class="content">
+                            <div class="stHeading">
+                                <p style="font-size: 1.1rem;margin: 1rem">Very Quick and Fast Support</p>
+                            </div>
+                            <p style="color: #5c5959;margin: 10px">Lorem ipsum dolor sit amet consectetur adipisicing
+                                o vitae dolor ea dolore molestiae facilis voluptas rerum sed,
+                                ipsa molestias.</p>
+
+                            <div class="review">
+                                <img src="images/empimage2.PNG" alt="Image" class="ProfileImg">
+                                <div class="Empinfo">
+                                    <p>Rohan Bhalekar</p>
+                                    <p style="font-size: 0.9rem; color: #646464;">CEO Pvt.inc</p>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="box2">
+                    <div class="stHeading">
+                        <p style="font-size: 1.1rem;margin: 1rem">Very Quick and Fast Support</p>
+                    </div>
+                    <p style="color: #5c5959;margin: 1rem">Lorem ipsum dolor sit amet consectetur adipisicing
+                        o vitae dolor ea dolore molestiae facilis voluptas rerum sed,
+                        ipsa molestias.</p>
+
+                    <div class="review">
+                        <img src="images/empimage2.PNG" alt="Image" class="ProfileImg">
+                        <div class="Empinfo">
+                            <p>Siddharth nadar</p>
+                            <p style="font-size: 0.9rem; color: #646464;">CEO Pvt.inc</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box3">
+                    <div class="stHeading">
+                        <p style="font-size: 1.1rem; margin: 1rem;">Very Quick and Fast Support</p>
+                    </div>
+                    <p style="color: #5c5959; margin: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing
+                        o vitae dolor ea dolore molestiae facilis voluptas rerum sed,
+                        ipsa molestias.</p>
+
+                    <div class="review">
+                        <img src="images/empimages.PNG" alt="Image" class="ProfileImg">
+                        <div class="Empinfo">
+                            <p>Rashi Patel</p>
+                            <p style="font-size: 0.9rem; color: #646464;">CEO Pvt.inc</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+    <section class="block5">
+
+        <div class="upperPt">
+            <div class="inspection">
+                <img src="images/inspectionimg.PNG" alt="Inspection">
+                <div class="inspectionInfo">
+                    <div class="upperInspection">
+                        <p style="font-size: 1.2rem; font-style: italic;">Want to Sell your Bike?</p>
+                        <h1>BIKE INSPECTION</h1>
+                    </div>
+                    <div class="middleInspection">
+
+                        <p class="upperMid" style="color: #646464;">Our CarSure experts inspects the cars oh over 200
+                            check points to you get complete satisfication and oeace of mind before buying</p>
+                        <div class="list">
+                            <div class="list1" style="width: 10rem;">
+                                <ul><span class="ul1">&#10004;</span>Transmissions</ul>
+                                <ul><span class="ul1">&#10004;</span> Tiers</ul>
+                                <ul><span class="ul1">&#10004;</span> Suspenssion</ul>
+                                <ul><span class="ul1">&#10004;</span> Air Conditioning</ul>
+                            </div>
+                            <div class="list2" style="width: 10rem;">
+                                <ul><span class="ul1">&#10004;</span> Steering</ul>
+                                <ul><span class="ul1">&#10004;</span> Lightining</ul>
+                                <ul><span class="ul1">&#10004;</span> Exterior</ul>
+                                <ul><span class="ul1">&#10004;</span> Engine Diagnostic</ul>
+                            </div>
+                            <div class="list3">
+                                <ul><span class="ul1">&#10004;</span> Engine</ul>
+                                <ul><span class="ul1">&#10004;</span> Interior</ul>
+                                <ul><span class="ul1">&#10004;</span> Brakes</ul>
+                                <ul><span class="ul1">&#10004;</span> Wheel Alignment</ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lowerInspection">
+
+                        <button class="ScheduleInspection"><b>SCHEDULE INSPECTION </b></button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="lowerPt">
+
+            <div class="companylogo">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png"
+                    alt="BMW" style="height: 7rem; width: 7rem ; border-radius: 10rem;">
+                <img src="https://logohistory.net/wp-content/uploads/2023/01/Honda-Logo.png" alt="BMW"
+                    style="height: 7rem; width: 13rem ;">
+                <img src="https://1000logos.net/wp-content/uploads/2021/09/Ducati-Logo.png" alt="BMW"
+                    style="height: 7rem; width: 7rem ;">
+                <img src="https://1000logos.net/wp-content/uploads/2020/06/Kawasaki-Logo.png" alt="BMW"
+                    style="height: 7rem; width: 11rem ; border-radius: 10rem;">
+                <img src="https://thumbs.dreamstime.com/b/logo-icon-vector-logos-icons-set-social-media-flat-banner-vectors-svg-eps-jpg-jpeg-paper-texture-glossy-emblem-wallpaper-210441936.jpg"
+                    alt="BMW" style="height: 8rem; width: 10rem ; border-radius: 10rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/2560px-Suzuki_logo_2.svg.png"
+                    alt="BMW" style="height: 6rem; width: 9rem ; ">
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="block6">
+        <div class="upperContext">
+            <div class="imgg">
+                <img src="https://www.wallpaperbetter.com/wallpaper/44/172/867/suzuki-gsx-r-bike-2K-wallpaper-middle-size.jpg"
+                    alt="bike" style="height: 45rem; width: 92.5rem; ">
+            </div>
+
+            <div class="leftside">
+                <img src="images/handimg.png" alt=".">
+            </div>
+            <div class="rightside">
+                <div class="upperside">
+                    <p style="height: 4rem ; display: flex; align-items: end; font-size: 1.5rem;">DOWNLOAD OUR APP</p>
+                    <h1 style="height: 6rem; display: flex; align-items: center; font-size: 2rem;">GET OUR APP FOR YOUR
+                        MOBILE</h1>
+                    <p style="height: 3rem ; display: flex; align-items: center;font-size: 1.2rem;"><span
+                            class="span1">&#9758;</span>Find nearby cars in our network</p>
+                    <p style="height: 3rem ; display: flex; align-items: center;font-size: 1.2rem;"><span
+                            class="span1">&#9758;</span>Browse real hirers reviews to know why choose scholar</p>
+                    <p style="height: 3rem ; display: flex; align-items: center;font-size: 1.2rem;"><span
+                            class="span1">&#9758;</span>Rent a car so easy with a tap</p>
+                    <p style="height: 3rem ; display: flex; align-items: center;font-size: 1.2rem;"><span
+                            class="span1">&#9758;</span>Rent a car so easy with a tap</p>
+
+                </div>
+
+                <div class="lowerside">
+                    <a class="store-button" href="https://www.microsoft.com/store/apps">
+                        <span>Download from</span>
+                        <span style="font-size: 1.5rem;"><b>Windows Store</b></span>
+                    </a>
+                    <a class="store-button" href="https://www.apple.com/store/apps">
+                        <span>Download from</span>
+                        <span style="font-size: 1.5rem;"><b>Apple Store </b></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+
+    <section class="block7">
+        <div class="contain">
+          <div class="leftContain">
+            <img src="images/logo2.PNG" alt=".." style="height: 2.5rem;">
+            <p style="color: gray;">Lorem ipsum, dolor <br> pudiandae aspernatur. Molestias dolor ipsum<br> Molestias.</p>
+            <div class="btnap">
+            <a class="btn btn-google" href="#" title="Google Play">Google Play</a>
+            <a class="btn btn-apple" href="#" title="Google Play">Apple Store</a>
+          </div>
+          </div>
+          <div class="middleContain">
+            <div class="followus">
+            <h4 style="text-align: center; display: flex; gap: 5rem;">Follow US</h4>
+            <a href="#"><h4 style="font-size: 0.9rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="f" style="height: 1.2rem;"> Facebook</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png?20220821125553" alt="f" style="height: 1rem;"> Twitter</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" alt="f" style="height: 1.3rem; border-radius: 0.5rem;"> Linkedin</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/1200px-Google_Plus_logo_%282015-2019%29.svg.png" alt="f" style="height: 1.5rem;"> Google+</h4></a>
+           
+            
+          </div>
+          <div class="quicklinks">
+            <h4>Quick Links</h4>
+            <a href="#"><h4 style="font-size: 0.9rem;">Sample Page</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;">About Us</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;">Blog</h4></a>
+            <a href="#"><h4 style="font-size: 0.9rem;">Contact Us</h4></a>
+          </div>
+          </div>
+          <div class="rightContain">
+            <h4 style="margin: 1rem; height: 2rem; ">Sign Up  for Weekly Newsletter</h4>
+            <p style="margin: 1rem; font-size: 0.8rem; color: gray;">We may send you information about related events, webinars, products and services which we believe</p>
+    
+            <input type="text" class="search-bar3" placeholder="Enter your Email Address">
+            <button class="search-button5">Submit</button>
+            <p style="font-size: 0.8rem; display: flex; margin: 1rem; color: gray;">Copyright 2017 &#169; Theme Created By <b style="color: #00A97D;">ScriptsBundle</b> All Rights Reserved.</p>
+            <div class="end">
+              <img src="images/button.PNG" alt="Up" style="height: 3rem;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+
+
+
+</body>
+
+</html>
